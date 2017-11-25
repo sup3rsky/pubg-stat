@@ -1,0 +1,85 @@
+playerName:
+    season: [2017-pre1 2017-pre2 2017-pre3 2017-pre4 2017-pre5]
+        region: [na eu as oc sa sea krjp]
+            mode: [solo duo squad solo-fpp duo-fpp squad-fpp]
+
+{
+    "region": "eu",
+    "defaultRegion": "eu",
+    "season": "2017-pre3",
+    "defaultSeason": "2017-pre3",
+    "match": "solo",
+    "lastUpdated": "2017-08-26T07:04:22.1761241Z",
+    "playerName": "fak3zito",
+    "performance": {
+        "killDeathRatio": 3.9,
+        "winRatio": 12.59,
+        "timeSurvived": 172745.7,
+        "roundsPlayed": 143,
+        "wins": 18,
+        "winTop10Ratio": 0.38,
+        "top10s": 48,
+        "top10Ratio": 33.57,
+        "losses": 125,
+        "winPoints": 1862
+    },
+    "skillRating": {
+        "rating": 2274,
+        "bestRating": 2289.04,
+        "bestRank": 35
+    },
+    "perGame": {
+        "damagePg": 412.52,
+        "headshotKillsPg": 1,
+        "healsPg": 2.63,
+        "killsPg": 3.41,
+        "moveDistancePg": 3869.1,
+        "revivesPg": "0",
+        "roadKillsPg": 0.02,
+        "teamKillsPg": 0.01,
+        "timeSurvivedPg": 1208.01,
+        "top10sPg": 0.34
+    },
+    "combat": {
+        "kills": 488,
+        "assists": 34,
+        "suicides": 1,
+        "teamKills": 1,
+        "headshotKills": 143,
+        "headshotKillRatio": 0.29,
+        "vehicleDestroys": 10,
+        "roadKills": 3,
+        "dailyKills": 20,
+        "weeklyKills": 85,
+        "roundMostKills": 14,
+        "maxKillStreaks": 2,
+        "weaponAcquired": "0"
+    },
+    "survival": {
+        "days": 21,
+        "longestTimeSurvived": 2183.97,
+        "mostSurvivalTime": 2183.97,
+        "avgSurvivalTime": 1208.01
+    },
+    "distance": {
+        "walkDistance": 295931.8,
+        "rideDistance": 257349.8,
+        "moveDistance": 553281.6,
+        "avgWalkDistance": 2069.45,
+        "avgRideDistance": 1799.65,
+        "longestKill": 483.63
+    },
+    "support": {
+        "heals": 376,
+        "revives": "0",
+        "boosts": 427,
+        "damageDealt": 58990.98,
+        "dBNOs": "0"
+    },
+    "rankData": {
+        "wins": 518,
+        "rating": 263,
+        "kills": 59,
+        "winPoints": 518
+    }
+}
