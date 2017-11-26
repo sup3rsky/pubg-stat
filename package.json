@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "hello": "node ./pubg/pubg_dot_me.js"
+    "pubg": "node ./pubg/pubg_dot_me.js",
+    "dak": "node ./pubg/dak_dot_gg.js"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -15,6 +16,7 @@
     "morgan": "~1.9.0",
     "serve-favicon": "~2.4.5",
     "superagent": "~3.8.0",
+    "superagent-throttle": "~0.2.5",
     "cheerio": "~1.0.0-rc.2",
     "mysql": "~2.15.0",
     "winston": "~3.0.0-rc1"

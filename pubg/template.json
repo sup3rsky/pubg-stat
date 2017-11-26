@@ -1,9 +1,31 @@
-playerName:
-    season: [2017-pre1 2017-pre2 2017-pre3 2017-pre4 2017-pre5]
-        region: [na eu as oc sa sea krjp]
-            mode: [solo duo squad solo-fpp duo-fpp squad-fpp]
-
 {
+    "schema": {
+        "playerName": "",
+        "season": [
+            "2017-pre1",
+            "2017-pre2",
+            "2017-pre3",
+            "2017-pre4",
+            "2017-pre5"
+        ],
+        "region": [
+            "na",
+            "eu",
+            "as",
+            "oc",
+            "sa",
+            "sea",
+            "krjp"
+        ],
+        "mode": [
+            "solo",
+            "duo",
+            "squad",
+            "solo-fpp",
+            "duo-fpp",
+            "squad-fpp"
+        ]
+    },
     "region": "eu",
     "defaultRegion": "eu",
     "season": "2017-pre3",

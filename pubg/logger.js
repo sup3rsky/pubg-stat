@@ -6,6 +6,7 @@ var myFormat = winston.format.printf(info => {
 
 module.exports = function (labelName) {
   return winston.createLogger({
+    level: 'debug',
     format: winston.format.combine(
       winston.format.label({ label: labelName }),
       winston.format.timestamp(),
