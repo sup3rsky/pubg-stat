@@ -77,7 +77,8 @@ function parseStats ($) {
       6: 'killDeathRatio',
       7: 'kills',
       9: 'matches',
-      18: 'top10Rate'
+      18: 'top10Rate',
+      19: 'top10s'
     }
     var data = item.data
     var url = record.baseUrl + data.link
