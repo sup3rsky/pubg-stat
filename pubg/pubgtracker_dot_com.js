@@ -1,10 +1,11 @@
 var logger = require('./logger')('pubgtracker.com')
 var cloudscraper = require('cloudscraper')
 var cheerio = require('cheerio')
+var mongodb = require('./mongodb')
 var record = {}
 var baseUrl = 'https://pubgtracker.com'
 
-function get (playerName) {
+function get (playerName, doneCallback) {
   var url = baseUrl + '/profile/pc/' + playerName
   cloudscraper.get(url, function (error, response, body) {
     if (error) {
@@ -13,11 +14,11 @@ function get (playerName) {
     }
     logger.debug('player `' + playerName + '` get `' + url + '`')
     var $ = cheerio.load(body)
-    parse($, playerName)
+    parse($, playerName, doneCallback)
   })
 }
 
-function parse ($, playerName) {
+function parse ($, playerName, doneCallback) {
   $('script').each(function (i, elem) {
     var data = $(this).html() // https://github.com/cheeriojs/cheerio/issues/1050
     data = data.trim()
@@ -27,13 +28,31 @@ function parse ($, playerName) {
         data = data.substring(0, data.length - 1)
       }
       record = JSON.parse(data)
-      updateDocument()
+      updateDocument(doneCallback)
     }
   })
 }
 
-function updateDocument () {
-  logger.debug('record = ' + JSON.stringify(record, null, 2))
+function updateDocument (doneCallback) {
+  // logger.debug('record = ' + JSON.stringify(record, null, 2))
+  mongodb.updateDocument(record)
+  record = {}
+  doneCallback()
 }
 
-get('laipingyibao')
+function scrape (docs) {
+  if (docs.length === 0) {
+    logger.info('done scrape')
+    return
+  }
+  var item = docs[0]
+  var playerName = item.PlayerName
+  get(playerName, function () {
+    scrape(docs.slice(1))
+  })
+}
+
+logger.info('start scrape')
+mongodb.getPlayerList(function (docs) {
+  scrape(docs)
+})
