@@ -11,6 +11,7 @@ module.exports = {
         logger.error('player `' + playerName + '` save to `' + url + '`: ' + err)
         return
       }
+
       db.collection('playerData').replaceOne(
         {PlayerName: playerName},
         record,
@@ -20,8 +21,22 @@ module.exports = {
             logger.error('player `' + playerName + '` save to `' + url + '`: ' + error)
           }
           logger.info('player `' + playerName + '` updated: ' + result.result.nModified)
+          if (result.result.nModified === 0) { // It is a insert
+            db.collection('playerList').replaceOne(
+              {PlayerName: playerName},
+              {PlayerName: playerName},
+              {upsert: true},
+              function (error, result) {
+                if (error) {
+                  logger.error('player `' + playerName + '` save to `' + url + '`: ' + error)
+                }
+                logger.info('player `' + playerName + '` goes into cache')
+                db.close()
+              })
+          } else {
+            db.close()
+          }
         })
-      db.close()
     })
   },
 

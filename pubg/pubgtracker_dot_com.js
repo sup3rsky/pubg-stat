@@ -36,8 +36,8 @@ function parse ($, playerName, doneCallback) {
 function updateDocument (doneCallback) {
   // logger.debug('record = ' + JSON.stringify(record, null, 2))
   mongodb.updateDocument(record)
+  doneCallback(record)
   record = {}
-  doneCallback()
 }
 
 function scrape (docs) {
@@ -52,7 +52,7 @@ function scrape (docs) {
   })
 }
 
-logger.info('start scrape')
-mongodb.getPlayerList(function (docs) {
-  scrape(docs)
-})
+module.exports = {
+  get: get,
+  scrape: scrape
+}

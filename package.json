@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "pubg": "node ./pubg/pubg_dot_me.js",
     "dak": "node ./pubg/dak_dot_gg.js",
-    "tracker": "node ./pubg/pubgtracker_dot_com.js"
+    "tracker": "node ./bin/scrape_pubgtracker_dot_com.js"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -23,7 +23,8 @@
     "winston": "~3.0.0-rc1",
     "cloudscraper": "~1.4.1",
     "mongodb": "~2.2.33",
-    "assert": "~1.4.1"
+    "assert": "~1.4.1",
+    "date-fns": "~1.29.0"
   },
   "devDependencies": {
     "eslint": "^4.11.0",
