@@ -1,0 +1,28 @@
+
+假设许铎那边定义了一个实验，
+名字是bgcolor
+可选值是altColor1/altColor2/altColor3
+
+对不同的userId调API返回是这样
+
+
+$ curl -s '127.0.0.1:3001/convert?userId=12345&deviceId=abcde'
+{"code":0,"message":"Success","data":{}}
+// userId=12345不参与实验
+
+
+$ curl -s '127.0.0.1:3001/convert?userId=123456&deviceId=abcde'
+{"code":0,"message":"Success","data":{"bgcolor":"altColor3"}}
+// userId=123456参与实验，拿到值altColor3
+
+
+$ curl -s '127.0.0.1:3001/convert?userId=1234568&deviceId=abcde'
+{"code":0,"message":"Success","data":{"bgcolor":"altColor2"}}
+// userId=1234568参与实验，拿到值altColor2
+
+
+code 0 表示成功 其它表示失败
+message 查问题用
+data 就是实验数据，类型为map,会有多条,key是实验名字，value是实验的可选值
+
+
