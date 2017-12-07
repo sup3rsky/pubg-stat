@@ -1,0 +1,45 @@
+{
+    "tests": [
+        {
+            "id": 100003,
+            "testId": "bgcolor",
+            "name": "背景色",
+            "description": "背景色背景色背景色",
+            "state": "running",
+            "type": "uid",
+            "platform": "android",
+            "targets": [
+                "all"
+            ],
+            "excludes": [],
+            "testGroups": [
+                {
+                    "id": 11000001,
+                    "name": "背景色选项一",
+                    "description": "选项一的意思是XXX",
+                    "variable": "altColor1",
+                    "ratio": 3333
+                },
+                {
+                    "id": 11000002,
+                    "name": "背景色选项二",
+                    "description": "选项二的意思是XXX",
+                    "variable": "altColor2",
+                    "ratio": 3333
+                },
+                {
+                    "id": 11000003,
+                    "name": "背景色选项三",
+                    "description": "选项三的意思是XXX",
+                    "variable": "altColor3",
+                    "ratio": 3334
+                }
+            ],
+            "ratio": 5000,
+            "createdAt": "2017-12-07T02:30:00Z",
+            "updatedAt": "2017-12-07T02:30:00Z",
+            "updater": "huanghao",
+            "archive": false
+        }
+    ]
+}
