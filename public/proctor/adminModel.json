@@ -1,7 +1,7 @@
 {
     "tests": [
         {
-            "id": 100003,
+            "id": 100001,
             "testId": "bgcolor",
             "name": "背景色",
             "description": "背景色背景色背景色",
@@ -35,7 +35,7 @@
                     "ratio": 3334
                 }
             ],
-            "ratio": 5000,
+            "ratio": 2000,
             "createdAt": "2017-12-07T02:30:00Z",
             "updatedAt": "2017-12-07T02:30:00Z",
             "updater": "huanghao",
